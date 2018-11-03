@@ -1,0 +1,23 @@
+import Remeras.*
+
+describe "test Remeras"{
+	
+	var sucursales = new Sucursal(pedidos = [remeraLisa],costoRemera = 200,cantDeRemeras = 30)
+	var remeraLisa = new RemerasLisas(talle= 40,coloresBasicos = [gris],descuento = 0.10, costoRemera = 80, cantDeRemeras = 10)
+    var gris = new ColoresBasicos()
+
+  
+
+
+
+test "Una remeraLisa de color gris de talle 40 cuesta $80"{
+       
+       remeraLisa.coloresBasicos(gris)
+       sucursales.nuevoPedido(remeraLisa)
+       remeraLisa.costoBasePorTalle()
+       remeraLisa.costoBase() 
+	assert.that(remeraLisa.costoBasePorTalle())
+
+  }
+
+}
